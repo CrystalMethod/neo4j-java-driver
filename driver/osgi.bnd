@@ -1,9 +1,8 @@
 package-version=${version;===;${Bundle-Version}}
 
 Export-Package: \
- !*.internal.*, \
- *;version="${package-version}"
+ *.internal*;x-internal:=true;version="${package-version}";-noimport:=true, \
+ *;version=${package-version};-noimport:=true
 
 Import-Package: \
  *
-

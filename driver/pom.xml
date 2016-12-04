@@ -19,7 +19,7 @@
 
   <artifactId>neo4j-java-driver</artifactId>
 
-  <packaging>jar</packaging>
+  <packaging>bundle</packaging>
   <name>Neo4j Java Driver</name>
   <description>Access to the Neo4j graph database through Java</description>
   <url>https://github.com/neo4j/neo4j-java-driver</url>
@@ -201,7 +201,8 @@
             <Bundle-Version>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}.${build.timestamp}</Bundle-Version>
             <_snapshot>${maven.build.timestamp}</_snapshot>
             <_versionpolicy>[$(version;==;$(@)),$(version;+;$(@)))</_versionpolicy>
-            <_removeheaders>Bnd-*,Private-Package</_removeheaders>
+            <_removeheaders>Bnd-*,Private-Package,Tool</_removeheaders>
+            <_sources>true</_sources>
             <_nouses>true</_nouses>
             <!-- each module can override these defaults in their osgi.bnd file -->
             <_include>-osgi.bnd</_include>
